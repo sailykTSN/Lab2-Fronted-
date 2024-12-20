@@ -8,17 +8,17 @@
   <link rel="stylesheet" href="swiper-bundle.min.css"/>
   <title>Swiper</title>
 </head>
-<style>  
+<style>
+body{
+  background-color: rgb(205, 242, 246);
+}  
   .swiper {
-    width: 50vw;
+    background-color: aliceblue;
+    margin-top: 22vh;
+    width: 100vw;
     height: 50vh;
-    margin-left: 25vw;
-    margin-right: 25vw;
-    margin-top: 25vh;
-    margin-bottom: 25vh;
   }
   img {    
-    width: 100%;
     height: 100%;
   }
   .swiper .swiper-button-prev,
@@ -28,6 +28,9 @@
   }
   .swiper .swiper-pagination {
     font-size: 16px;
+  }
+  .swiper-slide {
+    width: auto;
   }
   
 </style>
@@ -52,6 +55,9 @@
       <div class="swiper-slide">
         <img src="img/06.jpg" alt="Slide 6">
       </div>
+      <div class="swiper-slide">
+        <img src="img/07.jpg" alt="Slide 7">
+      </div>
     </div>
 
     <div class="swiper-pagination"></div>
@@ -59,4 +65,23 @@
     <div class="swiper-button-next"></div>
   </div>
 
-  <script src="swiper-bundle.min.js"></script
+  <script src="swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper('.swiper', {
+      loop: true,
+      freeMode: true,
+      spaceBetween: 50,  
+      slidesPerView: 'auto',    
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },      
+    });
+  </script>
+</body>
+</html>
